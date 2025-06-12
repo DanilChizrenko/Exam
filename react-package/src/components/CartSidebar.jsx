@@ -33,7 +33,7 @@ const CartSidebar = ({
           <div className="cart-empty-block">
             <img src={emptyCartImg} alt="Пусто" />
             <h3>Корзина пустая</h3>
-            <p>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
+            <p>Добавьте хотя бы одну пару предметов, чтобы сделать заказ.</p>
             <button className="cart-close-btn" onClick={onClose}>
               ← Вернуться назад
             </button>

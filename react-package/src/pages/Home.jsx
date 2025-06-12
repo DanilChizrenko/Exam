@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ProductList from '../components/ProductList';
 import CartSidebar from '../components/CartSidebar';
 
@@ -8,22 +8,16 @@ const Home = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [orderPlaced, setOrderPlaced] = useState(false);
-  const [orderNumber, setOrderNumber] = useState(() => {
-    const storedOrders = JSON.parse(localStorage.getItem('orders')) || [];
-    return storedOrders.length + 1;
-  });
-
-  const navigate = useNavigate();
+  const [orderNumber, setOrderNumber] = useState(1);
 
   useEffect(() => {
     fetch('http://localhost:4000/api/products/get-products')
-      .then(res => res.json())
-      .then(data => setProducts(data))
-      .catch(err => console.error('Ошибка загрузки продуктов:', err));
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .catch((err) => console.error('Ошибка загрузки продуктов:', err));
   }, []);
 
   const openCart = () => setIsCartOpen(true);
-
   const closeCart = () => {
     setIsCartOpen(false);
     setOrderPlaced(false);
@@ -34,29 +28,48 @@ const Home = () => {
     setIsCartOpen(true);
   };
 
+  const isInCart = (productId) => {
+    return cartItems.some(item => item.id === productId);
+  };
+
   const removeFromCart = (index) => {
     const updated = [...cartItems];
     updated.splice(index, 1);
     setCartItems(updated);
   };
 
-  const handleOrder = () => {
-    const newOrder = {
-      id: Date.now(),
-      number: orderNumber,
-      items: cartItems,
-      total: cartItems.reduce((sum, item) => sum + parseFloat(item.price), 0),
-      date: new Date().toLocaleString()
-    };
+  const handleOrder = async () => {
+    const userId = localStorage.getItem('userId');
+    if (!userId) {
+      alert('Сначала войдите в аккаунт');
+      return;
+    }
 
-    const prevOrders = JSON.parse(localStorage.getItem('orders')) || [];
-    const updatedOrders = [...prevOrders, newOrder];
-    localStorage.setItem('orders', JSON.stringify(updatedOrders));
+    const total = cartItems.reduce((sum, item) => sum + Number(item.price), 0);
 
-    setCartItems([]);
-    setOrderPlaced(true);
-    setIsCartOpen(true);
-    setOrderNumber(prev => prev + 1);
+    try {
+      const res = await fetch('http://localhost:4000/api/orders/add-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userId,
+          items: cartItems,
+          total
+        })
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.message || 'Ошибка оформления заказа');
+      }
+
+      const data = await res.json();
+      setOrderPlaced(true);
+      setCartItems([]);
+      setOrderNumber((n) => n + 1);
+    } catch (err) {
+      alert(err.message);
+    }
   };
 
   return (
@@ -72,7 +85,12 @@ const Home = () => {
       </div>
 
       <h1>Все товары</h1>
-      <ProductList products={products} onAddToCart={addToCart} />
+      <ProductList
+        products={products}
+        cartItems={cartItems}
+        onAddToCart={addToCart}
+      />
+
 
       <CartSidebar
         isOpen={isCartOpen}
@@ -81,7 +99,7 @@ const Home = () => {
         onRemove={removeFromCart}
         onOrder={handleOrder}
         orderPlaced={orderPlaced}
-        orderNumber={orderNumber - 1}
+        orderNumber={orderNumber}
       />
     </div>
   );
