@@ -1,0 +1,29 @@
+Sky Blue
+--primary: #96C3EB;
+--light: #FFFFFF;
+--danger: #FF8585;
+--dark: #000000;
+--secondary: #9B9B9B;
+
+Green Tea
+--primary: #9DD458;
+--light: #FFFFFF;
+--danger: #FF8585;
+--dark: #000000;
+--secondary: #9B9B9B;
+
+Purple
+--primary: #8758D4;
+--light: #FFFFFF;
+--danger: #FF8585;
+--dark: #000000;
+--secondary: #9B9B9B;
+
+Cyan
+--primary: #58D4CD;
+--light: #FFFFFF;
+--danger: #FF8585;
+--dark: #000000;
+--secondary: #9B9B9B;
+
+

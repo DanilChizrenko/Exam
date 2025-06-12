@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "Классическая футболка",
+        "price": "1500",
+        "image": "./products/clothes/1.jpeg"
+    },
+    {
+        "id": 2,
+        "title": "Стильные джинсы",
+        "price": "4500",
+        "image": "./products/clothes/2.webp"
+    },
+    {
+        "id": 3,
+        "title": "Уютный свитер",
+        "price": "3800",
+        "image": "./products/clothes/3.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Летнее платье",
+        "price": "5200",
+        "image": "./products/clothes/4.jpeg"
+    },
+    {
+        "id": 5,
+        "title": "Спортивные кроссовки",
+        "price": "6800",
+        "image": "./products/clothes/5.png"
+    },
+    {
+        "id": 6,
+        "title": "Деловая рубашка",
+        "price": "3200",
+        "image": "./products/clothes/6.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Теплая куртка",
+        "price": "8500",
+        "image": "./products/clothes/7.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Элегантная юбка",
+        "price": "2800",
+        "image": "./products/clothes/8.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Модные брюки",
+        "price": "4200",
+        "image": "./products/clothes/9.webp"
+    },
+    {
+        "id": 10,
+        "title": "Удобные носки",
+        "price": "800",
+        "image": "./products/clothes/10.webp"
+    },
+    {
+        "id": 11,
+        "title": "Стильная шапка",
+        "price": "1200",
+        "image": "./products/clothes/11.jpeg"
+    },
+    {
+        "id": 12,
+        "title": "Солнцезащитные очки",
+        "price": "3500",
+        "image": "./products/clothes/12.jpg"
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "Зеленое яблоко",
+        "price": "500",
+        "image": "./products/fruits/1.jpeg"
+    },
+    {
+        "id": 2,
+        "title": "Спелый банан",
+        "price": "120",
+        "image": "./products/fruits/2.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Сочный апельсин",
+        "price": "300",
+        "image": "./products/fruits/3.png"
+    },
+    {
+        "id": 4,
+        "title": "Красная клубника",
+        "price": "800",
+        "image": "./products/fruits/4.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Сладкий виноград",
+        "price": "650",
+        "image": "./products/fruits/5.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Желтый лимон",
+        "price": "250",
+        "image": "./products/fruits/6.webp"
+    },
+    {
+        "id": 7,
+        "title": "Ароматная груша",
+        "price": "400",
+        "image": "./products/fruits/7.jpeg"
+    },
+    {
+        "id": 8,
+        "title": "Синяя голубика",
+        "price": "1200",
+        "image": "./products/fruits/8.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Экзотический манго",
+        "price": "950",
+        "image": "./products/fruits/9.webp"
+    },
+    {
+        "id": 10,
+        "title": "Спелая вишня",
+        "price": "700",
+        "image": "./products/fruits/10.jpg"
+    },
+    {
+        "id": 11,
+        "title": "Зеленый лайм",
+        "price": "280",
+        "image": "./products/fruits/11.jpeg"
+    },
+    {
+        "id": 12,
+        "title": "Сочная малина",
+        "price": "1100",
+        "image": "./products/fruits/12.jpeg"
+    }
+]
