@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import backIcon from '../assets/icons/back.svg';
+
 
 const Auth = () => {
   const navigate = useNavigate();

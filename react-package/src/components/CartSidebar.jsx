@@ -2,6 +2,7 @@ import React from 'react';
 import './CartSidebar.css';
 import emptyCartImg from '../assets/alerts/empty-cart.svg';
 import orderSuccessImg from '../assets/alerts/success-order.svg';
+import backIcon from '../assets/icons/back.svg';
 
 const CartSidebar = ({
   isOpen,

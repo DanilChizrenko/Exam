@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import nonOrdersPng from '../assets/alerts/non-favorites.png'
+import backIcon from '../assets/icons/back.svg';
+
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -31,7 +33,11 @@ const Orders = () => {
         <div className="orders-header">
           <h1>Мои заказы</h1>
           <div style={{ display: 'flex', gap: '12px' }}>
-            <Link to="/" className="nav-button">← На главную</Link>
+           <Link to="/" className="nav-button back-link">
+              <img src={backIcon} alt="Назад" className="back-icon" />
+              На главную
+          </Link>
+
             <button className="logout-btn" onClick={handleLogout}>Выйти</button>
           </div>
         </div>

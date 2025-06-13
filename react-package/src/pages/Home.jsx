@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductList from '../components/ProductList';
 import CartSidebar from '../components/CartSidebar';
+import cartIcon from '../assets/icons/cart.svg';
+import userIcon from '../assets/icons/user.svg';
+import ordersIcon from '../assets/alerts/empty-cart.svg';
+
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -75,14 +79,21 @@ const Home = () => {
   return (
     <div className="home-page">
       <div className="nav-buttons">
-        <button className="nav-button" onClick={openCart}>🛒 Корзина</button>
-        <Link to="/orders">
-          <button className="nav-button">📦 Мои заказы</button>
-        </Link>
-        <Link to="/auth">
-          <button className="nav-button">👤 Войти</button>
-        </Link>
-      </div>
+  <button className="nav-button" onClick={openCart}>
+    <img src={cartIcon} alt="Корзина" className="nav-icon" /> Корзина
+  </button>
+  <Link to="/orders">
+    <button className="nav-button">
+      <img src={ordersIcon} alt="Мои заказы" className="nav-icon" /> Мои заказы
+    </button>
+  </Link>
+  <Link to="/auth">
+    <button className="nav-button">
+      <img src={userIcon} alt="Войти" className="nav-icon" /> Войти
+    </button>
+  </Link>
+</div>
+
 
       <h1>Все товары</h1>
       <ProductList
